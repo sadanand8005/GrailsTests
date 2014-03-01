@@ -86,10 +86,23 @@ grails.hibernate.cache.queries = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.dbconsole.enabled = true
+        grails.dbconsole.urlRoot = '/admin/dbconsole'
     }
     production {
         grails.logging.jul.usebridge = false
+        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.dbconsole.enabled = true
+        grails.dbconsole.urlRoot = '/admin/dbconsole'
         // TODO: grails.serverURL = "http://www.changeme.com"
+    }
+    
+    test {
+        grails.logging.jul.usebridge = false
+        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.dbconsole.enabled = true
+        grails.dbconsole.urlRoot = '/admin/dbconsole'
     }
 }
 
